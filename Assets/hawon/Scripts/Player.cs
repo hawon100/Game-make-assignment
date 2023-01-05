@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class P : MonoBehaviour
 {
     public float moveSpeed = 5f; // move speed
     private bool inputF;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical"); // forward back
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
-    }
+    } 
 
     private void Storewindow()
     {
