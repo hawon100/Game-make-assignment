@@ -787,8 +787,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 2
-    m_TransformParent: {fileID: 1791425303}
+    m_TransformParent: {fileID: 1788570458}
     m_Modifications:
+    - target: {fileID: 9075070927727584825, guid: 8ef05353bb6fdc146a0aa00d3090b1b4, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 32ef541892a4047449b5e1578f3d0c37, type: 2}
     - target: {fileID: 9075070927727584828, guid: 8ef05353bb6fdc146a0aa00d3090b1b4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2038,6 +2042,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 936911704}
     m_Modifications:
+    - target: {fileID: 9075070927727584825, guid: 8ef05353bb6fdc146a0aa00d3090b1b4, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b94537c5e7357e46b24fdbb430ac4ea, type: 2}
     - target: {fileID: 9075070927727584828, guid: 8ef05353bb6fdc146a0aa00d3090b1b4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6682,7 +6690,10 @@ PrefabInstance:
       value: InventorySlot (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3963481266149113932, guid: 1d1e92b54bbde4f48bfc2c9268957bfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 383867294}
   m_SourcePrefab: {fileID: 100100000, guid: 1d1e92b54bbde4f48bfc2c9268957bfe, type: 3}
 --- !u!224 &1788570458 stripped
 RectTransform:
@@ -6798,10 +6809,7 @@ PrefabInstance:
       value: InventorySlot (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3963481266149113932, guid: 1d1e92b54bbde4f48bfc2c9268957bfe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 383867294}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d1e92b54bbde4f48bfc2c9268957bfe, type: 3}
 --- !u!224 &1791425303 stripped
 RectTransform:
@@ -7766,6 +7774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b46290c1b89806478e3e511da113058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 1b0c8ceb132ebab4ebc8d4fe7d071e1c, type: 2}
   image: {fileID: 1988880834}
   parentAfterDrag: {fileID: 0}
 --- !u!1 &2019682345
