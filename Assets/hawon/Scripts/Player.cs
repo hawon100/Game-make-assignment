@@ -7,17 +7,25 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Player : MonoBehaviour
 {
+    [Header("Coin Score")]
     public Text CoinText; //coin
+    [Header("On/Off")]
     public GameObject[] Interaction; // gameobject setting
+    [Header("  ")]
+    [Header("UIManager")]
     public UIManager UIManager;
+    [Header("  ")]
+    [Header("Rigidbody")]
     public Rigidbody2D rb;
-
+    [Header("  ")]
+    [Header("Move")]
     public float moveSpeed = 20f; // move speed
     private bool inputF;
     bool CoinTF = false;
     int coinnumber = 0;
-
     Vector2 movement;
+    [Header("Tools")]
+    public GameObject[] Tools;
 
     private void Start()
     {
@@ -28,6 +36,15 @@ public class Player : MonoBehaviour
     {
         Move();
         Storewindow();
+        WeaponTrue();
+    }
+
+    private void WeaponTrue()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Tools[0].gameObject.SetActive(true);
+        }
     }
 
     private void CoinTake(int index)
