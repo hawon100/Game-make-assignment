@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class P : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f; // move speed
     private bool inputF;
