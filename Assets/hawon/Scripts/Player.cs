@@ -3,22 +3,38 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 5f; // move speed
-    private bool inputF;
-
+    public Text CoinText; //coin
     public GameObject[] Interaction; // gameobject setting
     public UIManager UIManager;
     public Rigidbody2D rb;
 
+    public float moveSpeed = 20f; // move speed
+    private bool inputF;
+    bool CoinTF = false;
+    int coinnumber = 0;
+
     Vector2 movement;
+
+    private void Start()
+    {
+        CoinText.text = coinnumber.ToString();
+    }
 
     private void Update()
     {
         Move();
         Storewindow();
+    }
+
+    private void CoinTake(int index)
+    {
+        coinnumber += index;
+
+        CoinText.text = coinnumber.ToString();
     }
 
     private void Move() //move
@@ -39,12 +55,22 @@ public class Player : MonoBehaviour
                 Interaction[0].SetActive(false); //merchant
                 Interaction[1].SetActive(true); //storewindow
                 Interaction[2].SetActive(false); //player
+                Interaction[3].SetActive(false); //Coin Text
                 UIManager.PotionTrue(); //potionwinow true
             }
         }
         else if(inputF == false)
         {
             Interaction[0].SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin") //coin 
+        {
+            Destroy(collision.gameObject);
+            CoinTake(1);
         }
     }
 
