@@ -1,29 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
-public class Item
+[CreateAssetMenu(menuName = "Scriptable object/Item")]
+public class Item : ScriptableObject
 {
-    public enum ItemType
-    {
-        Sword,
-        HealthPotion,
-        ManaPotion,
-        Coin,
-        Medkit,
-    }
+    [Header("Only gameplay")]
+    public TileBase tile;
+    public ItemType type;
+    public ActionType actionType;
+    public Vector2Int range = new Vector2Int(5, 4);
 
-    public ItemType itemType;
-    public int amount;
+    [Header("Only UI")]
+    public bool stackable = true;
 
-    public Sprite GetSprite()
-    {
-        switch(itemType)
-        {
-            default:
-            case ItemType.Sword: return ItemAssets.Instance.swordSprite;
-            case ItemType.HealthPotion: return ItemAssets.Instance.healthPotionSprite;
-            case ItemType.Coin: return ItemAssets.Instance.coinSprite;
-        }
-    }
+    [Header("Both")]
+    public Sprite image;
+}
+
+public enum ItemType
+{
+    BuildingBlock,
+    Tool
+}
+
+public enum ActionType
+{
+    Dig,
+    Mine
 }

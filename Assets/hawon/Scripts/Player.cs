@@ -12,21 +12,8 @@ public class Player : MonoBehaviour
     public GameObject[] Interaction; // gameobject setting
     public UIManager UIManager;
     public Rigidbody2D rb;
-    public UI_Inventory UI_Inventory;
 
     Vector2 movement;
-
-    private Inventory inventory;
-
-    private void Start()
-    {
-        inventory = new Inventory();
-        UI_Inventory.SetInventory(inventory);
-
-        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item { itemType = Item.ItemType.Sword, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(-20, 20), new Item { itemType = Item.ItemType.HealthPotion, amount = 1 });
-        ItemWorld.SpawnItemWorld(new Vector3(0, -20), new Item { itemType = Item.ItemType.Coin , amount = 1 });
-    }
 
     private void Update()
     {
@@ -40,7 +27,7 @@ public class Player : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical"); // forward back
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
-    }
+    } 
 
     private void Storewindow()
     {
